@@ -171,6 +171,53 @@
                     font-size: 16px;
                 }
             }
+			/* 强制覆盖样式 */
+            /* 1. 覆盖绿色背景 */
+            .staticrypt-content {
+                background-image: url('background.jpg') !important;
+                background-size: cover !important;
+                background-position: center !important;
+                background-color: #0a192f !important; /* 图片失效时的备用深蓝色 */
+            }
+
+            /* 2. 把白色卡片变成深色半透明毛玻璃 */
+            .staticrypt-form {
+                background: rgba(20, 30, 50, 0.7) !important;
+                backdrop-filter: blur(10px) !important;
+                border: 1px solid rgba(255, 255, 255, 0.1) !important;
+                border-radius: 12px !important; /* 加个圆角 */
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5) !important;
+            }
+
+            /* 3. 让所有文字变成白色 */
+            .staticrypt-title, 
+            .staticrypt-instructions, 
+            label.staticrypt-remember {
+                color: #ffffff !important;
+            }
+
+            /* 4. 把输入框变成半透明深色 */
+            .staticrypt-password-container {
+                background: rgba(255, 255, 255, 0.1) !important;
+                border-radius: 6px !important;
+            }
+            
+            .staticrypt-form input[type="password"],
+            input[type="text"] {
+                color: #ffffff !important; /* 输入的字变白 */
+            }
+
+            /* 5. 修改 placeholder（提示文字）的颜色，让它在深色背景下能看清 */
+            .staticrypt-form input::placeholder {
+                color: rgba(255, 255, 255, 0.5) !important;
+            }
+
+            /* 6. 让那个“小眼睛”图标在深色背景下反色变白 */
+            .staticrypt-toggle-password-visibility {
+                filter: invert(1) !important;
+                opacity: 0.8 !important;
+            }
+            /* 强制覆盖样式结束 */
         </style>
     </head>
 
